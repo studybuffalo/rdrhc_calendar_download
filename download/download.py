@@ -18,12 +18,15 @@ def download_schedule(details, session, role, log):
     log.info(f'Downloading {role} schedule.')
 
     # Assemble the download URL
-    url = f'{details["directory"]}{urllib.parse.quote(details["name"])}'
+    url = f'{details["directory"]}{urllib.parse.quote(details["name"])}.{details["extension"]}'
 
     log.debug(f'Requesting file from URL: "{url}".')
 
     download = session.get(url)
 
-    log.debug(download.status_code)
+    log.debug(f'Response status code: {download.status_code}')
+
+    if download.status_code != 200:
+        raise FileNotFoundError(f'Unable to download file: "{url}".')
 
     return download.content
