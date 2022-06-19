@@ -20,6 +20,10 @@ def download_schedule(details, session, role, log):
     # Assemble the download URL
     url = f'{details["directory"]}{urllib.parse.quote(details["name"])}'
 
+    log.debug(f'Requesting file from URL: "{url}".')
+
     download = session.get(url)
+
+    log.debug(download.status_code)
 
     return download.content
