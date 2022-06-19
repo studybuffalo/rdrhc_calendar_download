@@ -1,0 +1,11 @@
+# Configuration details
+*.cfg
+!config/.rdrhc_calendar_download.cfg
+!setup.cfg
+
+# Script files
+geckodriver.log
+
+# Script reporting
+reports/*
+!reports/.gitkeep

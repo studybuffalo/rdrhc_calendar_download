@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+paramiko = "*"  # https://github.com/paramiko/paramiko
+requests = "*"  # https://github.com/psf/requests
+selenium = "*"  # https://selenium-python.readthedocs.io/
+sentry-sdk = "*"  # https://github.com/getsentry/sentry-python
+
+
+[dev-packages]
+# Code quality
+# -----------------------------------------------------------------------------
+pycodestyle = "*"  # https://github.com/pycqa/pycodestyle
+pylint = "*"  # https://github.com/PyCQA/pylint/
+pylint-quotes = "*"  # https://github.com/edaniszewski/pylint-quotes
+
+
+# Testing
+# -----------------------------------------------------------------------------
+pytest = "*"  # https://github.com/pytest-dev/pytest
+pytest-cov = "*"  # https://github.com/pytest-dev/pytest-cov
+
+
+[requires]
+python_version = "3.8"
