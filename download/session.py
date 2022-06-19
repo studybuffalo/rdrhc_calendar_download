@@ -54,8 +54,6 @@ def setup_session(config, log):
         session = requests.Session()
         selenium_cookies = driver.get_cookies()
 
-        log.debug(f'Cookies present in Selenium: {selenium_cookies}')
-
         for cookie in selenium_cookies:
             session.cookies.set(cookie['name'], cookie['value'])
 
