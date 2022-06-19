@@ -122,7 +122,7 @@ class Log:
         # Set up Sentry (if enabled)
         if config.logging.enable_sentry:
             sentry_sdk.init(
-                config.sentry.dsn,
+                config.logging.dsn,
                 traces_sample_rate=config.logging.sample_rate,
                 environment=config.logging.environment,
                 debug=config.logging.sentry_debug,
