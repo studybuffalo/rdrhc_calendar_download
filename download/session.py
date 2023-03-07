@@ -27,14 +27,14 @@ def setup_session(config, log):
 
         # Retrieve each element (wait 5 seconds for timeout)
         log.debug('Retrieving references to login form via Selenium webdriver.')
-        user_name_field = WebDriverWait(driver, 5).until(
-            expected_conditions.presence_of_element_located((By.ID, 'login'))
+        user_name_field = WebDriverWait(driver, 15).until(
+            expected_conditions.presence_of_element_located((By.ID, 'userNameInputDisplay'))
         )
-        password_field = WebDriverWait(driver, 5).until(
-            expected_conditions.presence_of_element_located((By.ID, 'passwd'))
+        password_field = WebDriverWait(driver, 15).until(
+            expected_conditions.presence_of_element_located((By.ID, 'passwordInput'))
         )
-        submit_button = WebDriverWait(driver, 5).until(
-            expected_conditions.presence_of_element_located((By.ID, 'Logon'))
+        submit_button = WebDriverWait(driver, 15).until(
+            expected_conditions.presence_of_element_located((By.ID, 'submitButton'))
         )
 
         # Fill out fields and submit form
@@ -45,7 +45,7 @@ def setup_session(config, log):
 
         # Wait for the home page to load to allow cookies to be set
         log.debug('Waiting for home page to load.')
-        WebDriverWait(driver, 5).until(
+        WebDriverWait(driver, 15).until(
             expected_conditions.url_to_be(config.download.schedule_home)
         )
 
